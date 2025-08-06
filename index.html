@@ -1,0 +1,1452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>BHOLIF - Buddu Hopeful Living Foundation Uganda</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+            background-color: #ffffff;
+        }
+
+        /* Header Styles */
+        .header {
+            background: white;
+            color: #333;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #e60000;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo i {
+            font-size: 1.5rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        .nav-menu a {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            font-weight: 500;
+        }
+
+        .nav-menu a:hover {
+            background: #f8f9fa;
+            color: #e60000;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: #333;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(255, 255, 255, 0.95), rgba(248, 249, 250, 0.95)), 
+                        url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #333;
+            padding-top: 70px;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            padding: 2rem;
+            animation: fadeInUp 1s ease-out;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+            text-shadow: none;
+        }
+
+        .hero .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: #e60000;
+            font-weight: bold;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            color: #666;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        .btn-primary {
+            background: #e60000;
+            color: white;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #333;
+            border: 2px solid #e60000;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn-primary:hover {
+            background: #cc0000;
+        }
+
+        .btn-secondary:hover {
+            background: #e60000;
+            color: white;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 5rem 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: #e60000;
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about {
+            background: #f8f9fa;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            color: #e60000;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .registration-info {
+            background: #333;
+            color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-top: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-left: 4px solid #e60000;
+        }
+
+        .registration-info h4 {
+            color: white;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .about-image {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .placeholder-img {
+            width: 100%;
+            height: 350px;
+            background: linear-gradient(45deg, #f8f9fa, #e9ecef);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6c757d;
+            font-size: 1.2rem;
+            border-radius: 15px;
+        }
+
+        /* Mission Vision Section */
+        .mission-vision {
+            background: white;
+        }
+
+        .mission-vision-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .mission-card, .vision-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            border-top: 4px solid #e60000;
+            transition: transform 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .mission-card:hover, .vision-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+        }
+
+        .mission-card h3, .vision-card h3 {
+            color: #333;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .mission-card h3 i, .vision-card h3 i {
+            color: #e60000;
+        }
+
+        .mission-card p, .vision-card p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #555;
+        }
+
+        /* Objectives Section */
+        .objectives {
+            background: #f8f9fa;
+        }
+
+        .objectives-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .objective-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 5px solid #e60000;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .objective-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+
+        .objective-card h4 {
+            color: #e60000;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+        }
+
+        .objective-card p {
+            color: #555;
+            line-height: 1.7;
+        }
+
+        /* Services Section */
+        .services {
+            background: white;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: #f8f9fa;
+            padding: 2.5rem 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, #e60000, #ff4444);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: white;
+            font-size: 2rem;
+        }
+
+        .service-card h3 {
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: #555;
+            line-height: 1.7;
+        }
+
+        /* Leadership Section */
+        .leadership {
+            background: #f8f9fa;
+        }
+
+        .leadership-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .leader-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .leader-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+
+        .leader-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #f8f9fa, #e9ecef);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: #6c757d;
+            font-size: 1.5rem;
+            border: 4px solid #e60000;
+        }
+
+        .leader-card h4 {
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .leader-card .role {
+            color: #e60000;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .leader-card p {
+            color: #555;
+            line-height: 1.7;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            background: white;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            height: 250px;
+            background: linear-gradient(45deg, #f8f9fa, #e9ecef);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6c757d;
+            font-size: 1rem;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        /* Contact Section */
+        .contact {
+            background: #333;
+            color: white;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info h3 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        .contact-item {
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1.2rem;
+        }
+
+        .contact-icon {
+            font-size: 1.3rem;
+            color: #e60000;
+            min-width: 30px;
+        }
+
+        .contact-details h4 {
+            margin-bottom: 0.3rem;
+            color: white;
+        }
+
+        .contact-details p, .contact-details a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-details a:hover {
+            color: #e60000;
+        }
+
+        .contact-form {
+            background: white;
+            color: #333;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .contact-form h3 {
+            color: #333;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.9rem;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            background: white;
+            color: #333;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #e60000;
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: #e60000;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background: #cc0000;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Footer */
+        .footer {
+            background: #222;
+            color: white;
+            padding: 3rem 0 1.5rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem 2rem;
+        }
+
+        .footer-column h4 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-links a:hover {
+            color: #e60000;
+        }
+
+        .footer-text p {
+            color: #bdc3c7;
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: #333;
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: #e60000;
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+
+        /* Donate Button Styles */
+        .donate-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #e60000;
+            color: white;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(230, 0, 0, 0.3);
+            z-index: 999;
+            animation: pulse 2s infinite;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .donate-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(230, 0, 0, 0.4);
+        }
+
+        /* Donation Options Popup */
+        .donation-options {
+            display: none;
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            z-index: 1000;
+            color: #333;
+        }
+
+        .donation-options h4 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .donation-method {
+            padding: 10px 15px;
+            margin-bottom: 10px;
+            background: #f8f9fa;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: background 0.3s ease;
+        }
+
+        .donation-method:hover {
+            background: #e9ecef;
+        }
+
+        .donation-method i {
+            color: #e60000;
+        }
+
+        .close-btn {
+            background: #e60000;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .close-btn:hover {
+            background: #cc0000;
+        }
+
+        /* Stats Section */
+        .stats {
+            background: #f8f9fa;
+            color: #333;
+            padding: 3rem 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            color: #e60000;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-item p {
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        /* Members Section */
+        .members {
+            background: white;
+        }
+
+        .members-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .member-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            border-top: 3px solid #e60000;
+            transition: transform 0.3s ease;
+        }
+
+        .member-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .member-card h4 {
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .member-card p {
+            color: #e60000;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 5px 20px rgba(230, 0, 0, 0.3);
+            }
+            50% {
+                box-shadow: 0 5px 20px rgba(230, 0, 0, 0.6);
+            }
+            100% {
+                box-shadow: 0 5px 20px rgba(230, 0, 0, 0.3);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 1.5rem;
+                gap: 1rem;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .donate-btn {
+                bottom: 20px;
+                right: 20px;
+                padding: 12px 20px;
+                font-size: 1rem;
+            }
+
+            .donation-options {
+                bottom: 80px;
+                right: 20px;
+            }
+
+            .contact-form {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .section {
+                padding: 3.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo"><img alt="BHOLIF Logo" src="logo.jpg" style="height:50px; width:auto;"/> BHOLIF</div>
+            <nav>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#objectives">Objectives</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#leadership">Leadership</a></li>
+                    <li><a href="#members">Members</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="subtitle">Registered Non-Profit Organization</div>
+            <h1>Buddu Hopeful Living Foundation</h1>
+            <p>"BUDDUKIRO" - A place of hospitality and refuge for those in need</p>
+            <div class="cta-buttons">
+                <a class="btn btn-primary" href="#about">Learn More</a>
+                <a class="btn btn-secondary" href="#contact">Get Involved</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>15</h3>
+                    <p>Founding Members</p>
+                </div>
+                <div class="stat-item">
+                    <h3>2023</h3>
+                    <p>Year Established</p>
+                </div>
+                <div class="stat-item">
+                    <h3>2025</h3>
+                    <p>Fully Registered</p>
+                </div>
+                <div class="stat-item">
+                    <h3>∞</h3>
+                    <p>Lives to Impact</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about" id="about">
+        <div class="container">
+            <h2 class="section-title">About BHOLIF</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Our Story</h3>
+                    <p>Buddu Hopeful Living Foundation Uganda Ltd (BHOLIF) is a nonprofit organization established on August 1st, 2023, and fully registered as a Company Limited by Guarantee on July 10th, 2025.</p>
+                    <p>Founded by Rev. Father Ronald Mujabi of Masaka Diocese and Mr. Kirabira Tadeo (Proprietor of St. Francis Nursery and Junior Schools), BHOLIF represents the Luganda word "BUDDUKIRO" - meaning a place of hospitality, accommodation for the needy, and refuge.</p>
+                    <p>We are dedicated to improving the welfare, social wellbeing, and healthy living of elderly and vulnerable people throughout Uganda, with a focus on economic empowerment, healthcare access, and community support.</p>
+                    <div class="registration-info">
+                        <h4><i class="fas fa-file-contract"></i> Legal Registration</h4>
+                        <p><strong>Registration Number:</strong> 80034075092178</p>
+                        <p><strong>Company Type:</strong> Limited by Guarantee</p>
+                        <p><strong>Registered Office:</strong> Uganda</p>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="placeholder-img">
+                        <i class="fas fa-image fa-3x"></i>
+                        <span style="margin-left: 10px;">Elderly Care Community Photo</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Vision Section -->
+    <section class="section mission-vision">
+        <div class="container">
+            <div class="mission-vision-grid">
+                <div class="mission-card">
+                    <h3><i class="fas fa-bullseye"></i> Our Mission</h3>
+                    <p>To help the needy and elderly who are abandoned and are in vulnerable state as we give them the basic utilities and refreshing of their dignity.</p>
+                </div>
+                <div class="vision-card">
+                    <h3><i class="fas fa-eye"></i> Our Vision</h3>
+                    <p>To maintain hope and happiness in the hearts of the vulnerable people. "Okukuumira abayinike mu ssanyu ne mu ssuubi"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Objectives Section -->
+    <section class="section objectives" id="objectives">
+        <div class="container">
+            <h2 class="section-title">Our Objectives</h2>
+            <div class="objectives-grid">
+                <div class="objective-card">
+                    <h4><i class="fas fa-bullhorn"></i> Community Awareness</h4>
+                    <p>To enlighten society about elderly needs, regarding physical, psychological, social and economic needs and the secondary audiences.</p>
+                </div>
+                <div class="objective-card">
+                    <h4><i class="fas fa-chart-line"></i> Economic Empowerment</h4>
+                    <p>To ensure economic empowerment and sustainability of people in Buddu and other parts of the country.</p>
+                </div>
+                <div class="objective-card">
+                    <h4><i class="fas fa-home"></i> Livelihood Improvement</h4>
+                    <p>To improve livelihood of elderly people in the community through comprehensive support programs.</p>
+                </div>
+                <div class="objective-card">
+                    <h4><i class="fas fa-hands-helping"></i> Welfare Enhancement</h4>
+                    <p>To ensure improved welfare among vulnerable women and men through targeted interventions.</p>
+                </div>
+                <div class="objective-card">
+                    <h4><i class="fas fa-faucet"></i> Sanitation & Water</h4>
+                    <p>To ensure proper sanitation through providing safe and clean water in communities with water problems.</p>
+                </div>
+                <div class="objective-card">
+                    <h4><i class="fas fa-gavel"></i> Justice & Protection</h4>
+                    <p>To provide an avenue where elderly can report issues, bringing perpetrators to book by engaging the justice system.</p>
+                </div>
+                <div class="objective-card">
+                    <h4><i class="fas fa-comments"></i> Guidance & Counseling</h4>
+                    <p>To provide guidance and counseling to elderly and affected guardians going through mental and physical related issues.</p>
+                </div>
+                <div class="objective-card">
+                    <h4><i class="fas fa-book"></i> Knowledge Sharing</h4>
+                    <p>To gather and disseminate knowledge about mental health and other rights for community development.</p>
+                </div>
+                <div class="objective-card">
+                    <h4><i class="fas fa-handshake"></i> Partnership Development</h4>
+                    <p>To establish partnerships with Ugandan private sector organizations for educational planning and health services.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section services" id="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-hospital"></i></div>
+                    <h3>Healthcare Access</h3>
+                    <p>Helping elderly and vulnerable individuals access essential healthcare services and medical support.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-home"></i></div>
+                    <h3>Welfare Improvement</h3>
+                    <p>Improving living conditions and welfare standards for vulnerable community members.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-heart"></i></div>
+                    <h3>Companionship</h3>
+                    <p>Reducing loneliness through community programs and regular visits to isolated individuals.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-balance-scale"></i></div>
+                    <h3>Rights Protection</h3>
+                    <p>Fighting for the rights and protection of vulnerable people in our community.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-gavel"></i></div>
+                    <h3>Legal Support</h3>
+                    <p>Assisting elderly individuals in accessing legal and social services they need.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-users"></i></div>
+                    <h3>Community Care</h3>
+                    <p>Building a supportive community network for ongoing care and assistance.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-tint"></i></div>
+                    <h3>Water & Sanitation</h3>
+                    <p>Providing safe and clean water access to communities facing water challenges.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-brain"></i></div>
+                    <h3>Mental Health Support</h3>
+                    <p>Offering guidance and counseling for mental health and psychological wellbeing.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>Economic Programs</h3>
+                    <p>Implementing donor-funded initiatives for sustainable economic empowerment.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Section -->
+    <section class="section leadership" id="leadership">
+        <div class="container">
+            <h2 class="section-title">Our Leadership</h2>
+            <div class="leadership-grid">
+                <div class="leader-card">
+                    <div class="leader-avatar"><i class="fas fa-user"></i></div>
+                    <h4>Rev. Father Ronald Mujabi</h4>
+                    <div class="role">Co-Founder</div>
+                    <p>Masaka Diocese representative and spiritual leader guiding BHOLIF's mission.</p>
+                </div>
+                <div class="leader-card">
+                    <div class="leader-avatar"><i class="fas fa-user"></i></div>
+                    <h4>Mr. Kirabira Tadeo</h4>
+                    <div class="role">Co-Founder & Chairperson</div>
+                    <p>Proprietor of St. Francis Schools and Jude Auto Care Garage, providing strategic leadership.</p>
+                </div>
+                <div class="leader-card">
+                    <div class="leader-avatar"><i class="fas fa-user"></i></div>
+                    <h4>Mr. Byaruhanga Denis</h4>
+                    <div class="role">Member</div>
+                    <p>Active member contributing to BHOLIF's mission and programs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Members Section -->
+    <section class="section members" id="members">
+        <div class="container">
+            <h2 class="section-title">Our Founding Members</h2>
+            <div class="members-grid">
+                <div class="member-card">
+                    <h4>Rev. Fr. Ronald Mujabi</h4>
+                    <p>Co-Founder</p>
+                </div>
+                <div class="member-card">
+                    <h4>Mr. Kirabira Tadeo</h4>
+                    <p>Co-Founder & Chairperson</p>
+                </div>
+                <div class="member-card">
+                    <h4>Ms. Nakyimba Flora</h4>
+                    <p>Member</p>
+                </div>
+                <div class="member-card">
+                    <h4>Ms. Nakamoga Jackline</h4>
+                    <p>Member</p>
+                </div>
+                <div class="member-card">
+                    <h4>Ms. Nakazibwe Oliver Grace</h4>
+                    <p>Member</p>
+                </div>
+                <div class="member-card">
+                    <h4>Ms. Nakatooke Rosette</h4>
+                    <p>Member</p>
+                </div>
+                <div class="member-card">
+                    <h4>Ms. Nabachwa Justine</h4>
+                    <p>Member</p>
+                </div>
+                <div class="member-card">
+                    <h4>Ms. Nakiyumbi Resty</h4>
+                    <p>Member</p>
+                </div>
+                <div class="member-card">
+                    <h4>Mr. Lule David</h4>
+                    <p>Member</p>
+                </div>
+                <div class="member-card">
+                    <h4>Ms. Nakamya Barbra Kyolango</h4>
+                    <p>Member</p>
+                </div>
+                <div class="member-card">
+                    <h4>Ms. Nalweyiso Cissy</h4>
+                    <p>Member</p>
+                </div>
+                <div class="member-card">
+                    <h4>Mr. Lukonge Denis</h4>
+                    <p>Member</p>
+                </div>
+                <div class="member-card">
+                    <h4>Mr. Ssebanja Mike</h4>
+                    <p>Member</p>
+                </div>
+                <div class="member-card">
+                    <h4>Ms. Nasasira Scovia</h4>
+                    <p>Member</p>
+                </div>
+                <div class="member-card">
+                    <h4>Ms. Nanyunja Catherine</h4>
+                    <p>Member</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="section gallery" id="gallery">
+        <div class="container">
+            <h2 class="section-title">Our Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <i class="fas fa-camera fa-2x"></i>
+                    <span>Community Outreach Photo</span>
+                </div>
+                <div class="gallery-item">
+                    <i class="fas fa-camera fa-2x"></i>
+                    <span>Healthcare Support Photo</span>
+                </div>
+                <div class="gallery-item">
+                    <i class="fas fa-camera fa-2x"></i>
+                    <span>Elder Care Program Photo</span>
+                </div>
+                <div class="gallery-item">
+                    <i class="fas fa-camera fa-2x"></i>
+                    <span>Water Project Photo</span>
+                </div>
+                <div class="gallery-item">
+                    <i class="fas fa-camera fa-2x"></i>
+                    <span>Foundation Meeting Photo</span>
+                </div>
+                <div class="gallery-item">
+                    <i class="fas fa-camera fa-2x"></i>
+                    <span>Community Impact Photo</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Contact Us</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <div class="contact-item">
+                        <i class="contact-icon fas fa-map-marker-alt"></i>
+                        <div class="contact-details">
+                            <h4>Address</h4>
+                            <p>Uganda (Registered Office)</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="contact-icon fas fa-phone"></i>
+                        <div class="contact-details">
+                            <h4>Phone</h4>
+                            <a href="tel:+256779873791">+256 779 873 791</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="contact-icon fas fa-envelope"></i>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <a href="mailto:info@bholif.org">info@bholif.org</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="contact-icon fas fa-file-contract"></i>
+                        <div class="contact-details">
+                            <h4>Registration</h4>
+                            <p>Company No: 80034075092178</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Send us a Message</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h4>About BHOLIF</h4>
+                <div class="footer-text">
+                    <p>Buddu Hopeful Living Foundation Uganda Ltd is dedicated to improving the welfare and wellbeing of elderly and vulnerable people throughout Uganda.</p>
+                    <p><strong>Registration Number:</strong> 80034075092178</p>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#home"><i class="fas fa-angle-right"></i> Home</a></li>
+                    <li><a href="#about"><i class="fas fa-angle-right"></i> About Us</a></li>
+                    <li><a href="#services"><i class="fas fa-angle-right"></i> Our Services</a></li>
+                    <li><a href="#leadership"><i class="fas fa-angle-right"></i> Leadership</a></li>
+                    <li><a href="#contact"><i class="fas fa-angle-right"></i> Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Our Services</h4>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-angle-right"></i> Healthcare Access</a></li>
+                    <li><a href="#"><i class="fas fa-angle-right"></i> Economic Empowerment</a></li>
+                    <li><a href="#"><i class="fas fa-angle-right"></i> Mental Health Support</a></li>
+                    <li><a href="#"><i class="fas fa-angle-right"></i> Water & Sanitation</a></li>
+                    <li><a href="#"><i class="fas fa-angle-right"></i> Legal Support</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Contact Info</h4>
+                <div class="footer-text">
+                    <p><i class="fas fa-phone"></i> +256 779 873 791</p>
+                    <p><i class="fas fa-envelope"></i> info@bholif.org</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Uganda</p>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Buddu Hopeful Living Foundation Uganda Ltd (BHOLIF). All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Donate Button -->
+    <button class="donate-btn" onclick="showDonationOptions()">
+        <i class="fas fa-donate"></i> Donate Now
+    </button>
+
+    <!-- Donation Options Popup -->
+    <div class="donation-options">
+        <h4>Donate via:</h4>
+        <div class="donation-method" onclick="copyPhoneNumber('+256779873791')">
+            <i class="fas fa-mobile-alt"></i> Mobile Money (+256779873791)
+        </div>
+        <button class="close-btn" onclick="closeDonationOptions()">Close</button>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        function toggleMenu() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('active');
+        }
+
+        function showDonationOptions() {
+            document.querySelector('.donation-options').style.display = 'block';
+        }
+
+        function closeDonationOptions() {
+            document.querySelector('.donation-options').style.display = 'none';
+        }
+
+        function copyPhoneNumber(number) {
+            navigator.clipboard.writeText(number).then(function() {
+                alert('Phone number copied to clipboard: ' + number + '\n\nYou can now paste it in your mobile money app to make a donation.');
+            }).catch(function() {
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = number;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                alert('Phone number copied to clipboard: ' + number + '\n\nYou can now paste it in your mobile money app to make a donation.');
+            });
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('navMenu').classList.remove('active');
+            });
+        });
+
+        // Contact form submission
+        document.querySelector('.contact-form form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
+                
