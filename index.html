@@ -266,6 +266,13 @@
             border-radius: 15px;
             overflow: hidden;
             box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            height: 350px;
+            background: linear-gradient(45deg, #f8f9fa, #e9ecef);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6c757d;
+            font-size: 1.2rem;
         }
 
         /* Image Styles */
@@ -273,12 +280,6 @@
             max-width: 100%;
             height: auto;
             display: block;
-        }
-
-        .about-image img {
-            width: 100%;
-            height: 350px;
-            object-fit: cover;
         }
 
         /* Mission Vision Section */
@@ -453,13 +454,6 @@
             color: #6c757d;
             font-size: 1.5rem;
             border: 4px solid #e60000;
-            overflow: hidden;
-        }
-
-        .leader-avatar img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
         }
 
         .leader-card h4 {
@@ -476,6 +470,57 @@
         .leader-card p {
             color: #555;
             line-height: 1.7;
+        }
+
+        /* Members Section */
+        .members {
+            background: white;
+        }
+
+        .members-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .member-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            border-top: 3px solid #e60000;
+            transition: transform 0.3s ease;
+        }
+
+        .member-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            color: #6c757d;
+            font-size: 1.5rem;
+            border: 3px solid #e60000;
+        }
+
+        .member-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .member-card h4 {
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .member-card p {
+            color: #e60000;
+            font-size: 0.9rem;
+            font-weight: 500;
         }
 
         /* Gallery Section */
@@ -496,7 +541,7 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
             height: 250px;
-            cursor: pointer;
+            background: linear-gradient(45deg, #f8f9fa, #e9ecef);
         }
 
         .gallery-item img {
@@ -512,23 +557,6 @@
 
         .gallery-item:hover img {
             transform: scale(1.05);
-        }
-
-        .gallery-caption {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: rgba(0, 0, 0, 0.7);
-            color: white;
-            padding: 0.5rem;
-            text-align: center;
-            transform: translateY(100%);
-            transition: transform 0.3s ease;
-        }
-
-        .gallery-item:hover .gallery-caption {
-            transform: translateY(0);
         }
 
         /* Lightbox Styles */
@@ -557,13 +585,6 @@
             width: auto;
             max-width: 100%;
             border-radius: 5px;
-        }
-
-        .lightbox-caption {
-            color: white;
-            text-align: center;
-            margin-top: 1rem;
-            font-size: 1.2rem;
         }
 
         .lightbox-close {
@@ -749,31 +770,6 @@
             font-size: 0.95rem;
         }
 
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1.5rem;
-            flex-wrap: wrap;
-        }
-
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: #333;
-            border-radius: 50%;
-            color: white;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .social-links a:hover {
-            background: #e60000;
-            transform: translateY(-3px);
-        }
-
         .copyright {
             text-align: center;
             padding-top: 2rem;
@@ -889,43 +885,6 @@
         .stat-item p {
             font-size: 1.1rem;
             color: #555;
-        }
-
-        /* Members Section */
-        .members {
-            background: white;
-        }
-
-        .members-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .member-card {
-            background: #f8f9fa;
-            padding: 1.5rem;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-            border-top: 3px solid #e60000;
-            transition: transform 0.3s ease;
-        }
-
-        .member-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .member-card h4 {
-            color: #333;
-            margin-bottom: 0.5rem;
-        }
-
-        .member-card p {
-            color: #e60000;
-            font-size: 0.9rem;
-            font-weight: 500;
         }
 
         /* Animations */
@@ -1162,7 +1121,8 @@
                     </div>
                 </div>
                 <div class="about-image">
-                    <img src="images/about-us.jpg" alt="BHOLIF team helping the elderly in community">
+                    <i class="fas fa-image fa-3x"></i>
+                    <span>About BHOLIF Photo</span>
                 </div>
             </div>
         </div>
@@ -1290,7 +1250,7 @@
             <div class="leadership-grid">
                 <div class="leader-card">
                     <div class="leader-avatar">
-                        <img src="images/fr-ronald.jpg" alt="Rev. Father Ronald Mujabi">
+                        <i class="fas fa-user"></i>
                     </div>
                     <h4>Rev. Father Ronald Mujabi</h4>
                     <div class="role">Co-Founder</div>
@@ -1298,19 +1258,11 @@
                 </div>
                 <div class="leader-card">
                     <div class="leader-avatar">
-                        <img src="images/kirabira-tadeo.jpg" alt="Mr. Kirabira Tadeo">
+                        <i class="fas fa-user"></i>
                     </div>
                     <h4>Mr. Kirabira Tadeo</h4>
                     <div class="role">Co-Founder & Chairperson</div>
                     <p>Proprietor of St. Francis Schools and Jude Auto Care Garage, providing strategic leadership.</p>
-                </div>
-                <div class="leader-card">
-                    <div class="leader-avatar">
-                        <img src="images/byaruhanga-denis.jpg" alt="Mr. Byaruhanga Denis">
-                    </div>
-                    <h4>Mr. Byaruhanga Denis</h4>
-                    <div class="role">Member</div>
-                    <p>Active member contributing to BHOLIF's mission and programs.</p>
                 </div>
             </div>
         </div>
@@ -1322,62 +1274,77 @@
             <h2 class="section-title">Our Founding Members</h2>
             <div class="members-grid">
                 <div class="member-card">
+                    <div class="member-avatar"><i class="fas fa-user"></i></div>
                     <h4>Rev. Fr. Ronald Mujabi</h4>
                     <p>Co-Founder</p>
                 </div>
                 <div class="member-card">
+                    <div class="member-avatar"><i class="fas fa-user"></i></div>
                     <h4>Mr. Kirabira Tadeo</h4>
                     <p>Co-Founder & Chairperson</p>
                 </div>
                 <div class="member-card">
+                    <div class="member-avatar"><i class="fas fa-user"></i></div>
                     <h4>Ms. Nakyimba Flora</h4>
                     <p>Member</p>
                 </div>
                 <div class="member-card">
+                    <div class="member-avatar"><i class="fas fa-user"></i></div>
                     <h4>Ms. Nakamoga Jackline</h4>
                     <p>Member</p>
                 </div>
                 <div class="member-card">
+                    <div class="member-avatar"><i class="fas fa-user"></i></div>
                     <h4>Ms. Nakazibwe Oliver Grace</h4>
                     <p>Member</p>
                 </div>
                 <div class="member-card">
+                    <div class="member-avatar"><i class="fas fa-user"></i></div>
                     <h4>Ms. Nakatooke Rosette</h4>
                     <p>Member</p>
                 </div>
                 <div class="member-card">
+                    <div class="member-avatar"><i class="fas fa-user"></i></div>
                     <h4>Ms. Nabachwa Justine</h4>
                     <p>Member</p>
                 </div>
                 <div class="member-card">
+                    <div class="member-avatar"><i class="fas fa-user"></i></div>
                     <h4>Ms. Nakiyumbi Resty</h4>
                     <p>Member</p>
                 </div>
                 <div class="member-card">
+                    <div class="member-avatar"><i class="fas fa-user"></i></div>
                     <h4>Mr. Lule David</h4>
                     <p>Member</p>
                 </div>
                 <div class="member-card">
+                    <div class="member-avatar"><i class="fas fa-user"></i></div>
                     <h4>Ms. Nakamya Barbra Kyolango</h4>
                     <p>Member</p>
                 </div>
                 <div class="member-card">
+                    <div class="member-avatar"><i class="fas fa-user"></i></div>
                     <h4>Ms. Nalweyiso Cissy</h4>
                     <p>Member</p>
                 </div>
                 <div class="member-card">
+                    <div class="member-avatar"><i class="fas fa-user"></i></div>
                     <h4>Mr. Lukonge Denis</h4>
                     <p>Member</p>
                 </div>
                 <div class="member-card">
+                    <div class="member-avatar"><i class="fas fa-user"></i></div>
                     <h4>Mr. Ssebanja Mike</h4>
                     <p>Member</p>
                 </div>
                 <div class="member-card">
+                    <div class="member-avatar"><i class="fas fa-user"></i></div>
                     <h4>Ms. Nasasira Scovia</h4>
                     <p>Member</p>
                 </div>
                 <div class="member-card">
+                    <div class="member-avatar"><i class="fas fa-user"></i></div>
                     <h4>Ms. Nanyunja Catherine</h4>
                     <p>Member</p>
                 </div>
@@ -1391,28 +1358,22 @@
             <h2 class="section-title">Our Gallery</h2>
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="images/outreach.jpg" alt="BHOLIF community outreach program">
-                    <div class="gallery-caption">Community Outreach</div>
+                    <i class="fas fa-image fa-3x"></i>
                 </div>
                 <div class="gallery-item">
-                    <img src="images/healthcare.jpg" alt="BHOLIF healthcare support">
-                    <div class="gallery-caption">Healthcare Support</div>
+                    <i class="fas fa-image fa-3x"></i>
                 </div>
                 <div class="gallery-item">
-                    <img src="images/elder-care.jpg" alt="BHOLIF elder care program">
-                    <div class="gallery-caption">Elder Care Program</div>
+                    <i class="fas fa-image fa-3x"></i>
                 </div>
                 <div class="gallery-item">
-                    <img src="images/water-project.jpg" alt="BHOLIF water project">
-                    <div class="gallery-caption">Water Project</div>
+                    <i class="fas fa-image fa-3x"></i>
                 </div>
                 <div class="gallery-item">
-                    <img src="images/meeting.jpg" alt="BHOLIF foundation meeting">
-                    <div class="gallery-caption">Foundation Meeting</div>
+                    <i class="fas fa-image fa-3x"></i>
                 </div>
                 <div class="gallery-item">
-                    <img src="images/impact.jpg" alt="BHOLIF community impact">
-                    <div class="gallery-caption">Community Impact</div>
+                    <i class="fas fa-image fa-3x"></i>
                 </div>
             </div>
         </div>
@@ -1488,12 +1449,6 @@
                 <div class="footer-text">
                     <p>Buddu Hopeful Living Foundation Uganda Ltd is dedicated to improving the welfare and wellbeing of elderly and vulnerable people throughout Uganda.</p>
                     <p><strong>Registration Number:</strong> 80034075092178</p>
-                </div>
-                <div class="social-links">
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
             <div class="footer-column">
@@ -1628,32 +1583,6 @@
                     donationOptions.style.display = 'none';
                 }
             }
-        });
-
-        // Gallery lightbox functionality
-        document.querySelectorAll('.gallery-item img').forEach(image => {
-            image.addEventListener('click', function() {
-                const lightbox = document.createElement('div');
-                lightbox.className = 'lightbox';
-                lightbox.innerHTML = `
-                    <div class="lightbox-content">
-                        <img src="${this.src}" alt="${this.alt}">
-                        <div class="lightbox-caption">${this.nextElementSibling.textContent}</div>
-                        <button class="lightbox-close">&times;</button>
-                    </div>
-                `;
-                document.body.appendChild(lightbox);
-                
-                lightbox.querySelector('.lightbox-close').addEventListener('click', function() {
-                    lightbox.remove();
-                });
-                
-                lightbox.addEventListener('click', function(e) {
-                    if (e.target === lightbox) {
-                        lightbox.remove();
-                    }
-                });
-            });
         });
     </script>
 </body>
