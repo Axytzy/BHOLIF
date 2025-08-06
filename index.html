@@ -57,6 +57,7 @@
             height: 50px;
             width: auto;
             max-width: 100%;
+            border-radius: 50%;
         }
 
         .nav-menu {
@@ -267,19 +268,31 @@
             overflow: hidden;
             box-shadow: 0 15px 30px rgba(0,0,0,0.1);
             height: 350px;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Image placeholder styles */
+        .image-placeholder {
             background: linear-gradient(45deg, #f8f9fa, #e9ecef);
             display: flex;
             align-items: center;
             justify-content: center;
             color: #6c757d;
             font-size: 1.2rem;
+            flex-direction: column;
+            gap: 0.5rem;
+            text-align: center;
+            padding: 1rem;
         }
 
-        /* Image Styles */
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
+        .image-placeholder i {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
         }
 
         /* Mission Vision Section */
@@ -446,14 +459,18 @@
             width: 120px;
             height: 120px;
             border-radius: 50%;
-            background: linear-gradient(45deg, #f8f9fa, #e9ecef);
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto 1.5rem;
-            color: #6c757d;
-            font-size: 1.5rem;
             border: 4px solid #e60000;
+            overflow: hidden;
+        }
+
+        .leader-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .leader-card h4 {
@@ -497,14 +514,18 @@
             width: 80px;
             height: 80px;
             border-radius: 50%;
-            background: #f8f9fa;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto 1rem;
-            color: #6c757d;
-            font-size: 1.5rem;
             border: 3px solid #e60000;
+            overflow: hidden;
+        }
+
+        .member-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .member-card:hover {
@@ -541,7 +562,7 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
             height: 250px;
-            background: linear-gradient(45deg, #f8f9fa, #e9ecef);
+            cursor: pointer;
         }
 
         .gallery-item img {
@@ -567,7 +588,7 @@
             right: 0;
             bottom: 0;
             background: rgba(0, 0, 0, 0.9);
-            display: flex;
+            display: none;
             align-items: center;
             justify-content: center;
             z-index: 2000;
@@ -1049,7 +1070,9 @@
     <!-- Header -->
     <header class="header">
         <div class="nav-container">
-            <div class="logo"><img alt="BHOLIF Logo" src="logo.jpg"/> BHOLIF</div>
+            <div class="logo">
+                <img alt="BHOLIF Logo" src="logo.jpg"/> BHOLIF
+            </div>
             <nav>
                 <ul class="nav-menu" id="navMenu">
                     <li><a href="#home">Home</a></li>
@@ -1121,8 +1144,11 @@
                     </div>
                 </div>
                 <div class="about-image">
-                    <i class="fas fa-image fa-3x"></i>
-                    <span>About BHOLIF Photo</span>
+                    <img alt="BHOLIF Team Photo" src="about-bholif-team.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+                    <div class="image-placeholder" style="display: none;">
+                        <i class="fas fa-image"></i>
+                        <span>About BHOLIF Team Photo</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1250,7 +1276,10 @@
             <div class="leadership-grid">
                 <div class="leader-card">
                     <div class="leader-avatar">
-                        <i class="fas fa-user"></i>
+                        <img alt="Rev. Father Ronald Mujabi" src="ronald-mujabi.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+                        <div class="image-placeholder" style="display: none;">
+                            <i class="fas fa-user"></i>
+                        </div>
                     </div>
                     <h4>Rev. Father Ronald Mujabi</h4>
                     <div class="role">Co-Founder</div>
@@ -1258,7 +1287,10 @@
                 </div>
                 <div class="leader-card">
                     <div class="leader-avatar">
-                        <i class="fas fa-user"></i>
+                        <img alt="Mr. Kirabira Tadeo" src="kirabira-tadeo.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+                        <div class="image-placeholder" style="display: none;">
+                            <i class="fas fa-user"></i>
+                        </div>
                     </div>
                     <h4>Mr. Kirabira Tadeo</h4>
                     <div class="role">Co-Founder & Chairperson</div>
@@ -1274,77 +1306,152 @@
             <h2 class="section-title">Our Founding Members</h2>
             <div class="members-grid">
                 <div class="member-card">
-                    <div class="member-avatar"><i class="fas fa-user"></i></div>
+                    <div class="member-avatar">
+                        <img alt="Rev. Fr. Ronald Mujabi" src="ronald-mujabi.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+                        <div class="image-placeholder" style="display: none;">
+                            <i class="fas fa-user"></i>
+                        </div>
+                    </div>
                     <h4>Rev. Fr. Ronald Mujabi</h4>
                     <p>Co-Founder</p>
                 </div>
                 <div class="member-card">
-                    <div class="member-avatar"><i class="fas fa-user"></i></div>
+                    <div class="member-avatar">
+                        <img alt="Mr. Kirabira Tadeo" src="kirabira-tadeo.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+                        <div class="image-placeholder" style="display: none;">
+                            <i class="fas fa-user"></i>
+                        </div>
+                    </div>
                     <h4>Mr. Kirabira Tadeo</h4>
                     <p>Co-Founder & Chairperson</p>
                 </div>
                 <div class="member-card">
-                    <div class="member-avatar"><i class="fas fa-user"></i></div>
+                    <div class="member-avatar">
+                        <img alt="Ms. Nakyimba Flora" src="nakyimba-flora.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+                        <div class="image-placeholder" style="display: none;">
+                            <i class="fas fa-user"></i>
+                        </div>
+                    </div>
                     <h4>Ms. Nakyimba Flora</h4>
                     <p>Member</p>
                 </div>
                 <div class="member-card">
-                    <div class="member-avatar"><i class="fas fa-user"></i></div>
+                    <div class="member-avatar">
+                        <img alt="Ms. Nakamoga Jackline" src="nakamoga-jackline.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+                        <div class="image-placeholder" style="display: none;">
+                            <i class="fas fa-user"></i>
+                        </div>
+                    </div>
                     <h4>Ms. Nakamoga Jackline</h4>
                     <p>Member</p>
                 </div>
                 <div class="member-card">
-                    <div class="member-avatar"><i class="fas fa-user"></i></div>
+                    <div class="member-avatar">
+                        <img alt="Ms. Nakazibwe Oliver Grace" src="nakazibwe-oliver-grace.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+                        <div class="image-placeholder" style="display: none;">
+                            <i class="fas fa-user"></i>
+                        </div>
+                    </div>
                     <h4>Ms. Nakazibwe Oliver Grace</h4>
                     <p>Member</p>
                 </div>
                 <div class="member-card">
-                    <div class="member-avatar"><i class="fas fa-user"></i></div>
+                    <div class="member-avatar">
+                        <img alt="Ms. Nakatooke Rosette" src="nakatooke-rosette.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+                        <div class="image-placeholder" style="display: none;">
+                            <i class="fas fa-user"></i>
+                        </div>
+                    </div>
                     <h4>Ms. Nakatooke Rosette</h4>
                     <p>Member</p>
                 </div>
                 <div class="member-card">
-                    <div class="member-avatar"><i class="fas fa-user"></i></div>
+                    <div class="member-avatar">
+                        <img alt="Ms. Nabachwa Justine" src="nabachwa-justine.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+                        <div class="image-placeholder" style="display: none;">
+                            <i class="fas fa-user"></i>
+                        </div>
+                    </div>
                     <h4>Ms. Nabachwa Justine</h4>
                     <p>Member</p>
                 </div>
                 <div class="member-card">
-                    <div class="member-avatar"><i class="fas fa-user"></i></div>
+                    <div class="member-avatar">
+                        <img alt="Ms. Nakiyumbi Resty" src="nakiyumbi-resty.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+                        <div class="image-placeholder" style="display: none;">
+                            <i class="fas fa-user"></i>
+                        </div>
+                    </div>
                     <h4>Ms. Nakiyumbi Resty</h4>
                     <p>Member</p>
                 </div>
                 <div class="member-card">
-                    <div class="member-avatar"><i class="fas fa-user"></i></div>
+                    <div class="member-avatar">
+                        <img alt="Mr. Lule David" src="lule-david.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+                        <div class="image-placeholder" style="display: none;">
+                            <i class="fas fa-user"></i>
+                        </div>
+                    </div>
                     <h4>Mr. Lule David</h4>
                     <p>Member</p>
                 </div>
                 <div class="member-card">
-                    <div class="member-avatar"><i class="fas fa-user"></i></div>
+                    <div class="member-avatar">
+                        <img alt="Ms. Nakamya Barbra Kyolango" src="nakamya-barbra-kyolango.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+                        <div class="image-placeholder" style="display: none;">
+                            <i class="fas fa-user"></i>
+                        </div>
+                    </div>
                     <h4>Ms. Nakamya Barbra Kyolango</h4>
                     <p>Member</p>
                 </div>
                 <div class="member-card">
-                    <div class="member-avatar"><i class="fas fa-user"></i></div>
+                    <div class="member-avatar">
+                        <img alt="Ms. Nalweyiso Cissy" src="nalweyiso-cissy.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+                        <div class="image-placeholder" style="display: none;">
+                            <i class="fas fa-user"></i>
+                        </div>
+                    </div>
                     <h4>Ms. Nalweyiso Cissy</h4>
                     <p>Member</p>
                 </div>
                 <div class="member-card">
-                    <div class="member-avatar"><i class="fas fa-user"></i></div>
+                    <div class="member-avatar">
+                        <img alt="Mr. Lukonge Denis" src="lukonge-denis.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+                        <div class="image-placeholder" style="display: none;">
+                            <i class="fas fa-user"></i>
+                        </div>
+                    </div>
                     <h4>Mr. Lukonge Denis</h4>
                     <p>Member</p>
                 </div>
                 <div class="member-card">
-                    <div class="member-avatar"><i class="fas fa-user"></i></div>
+                    <div class="member-avatar">
+                        <img alt="Mr. Ssebanja Mike" src="ssebanja-mike.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+                        <div class="image-placeholder" style="display: none;">
+                            <i class="fas fa-user"></i>
+                        </div>
+                    </div>
                     <h4>Mr. Ssebanja Mike</h4>
                     <p>Member</p>
                 </div>
                 <div class="member-card">
-                    <div class="member-avatar"><i class="fas fa-user"></i></div>
+                    <div class="member-avatar">
+                        <img alt="Ms. Nasasira Scovia" src="nasasira-scovia.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+                        <div class="image-placeholder" style="display: none;">
+                            <i class="fas fa-user"></i>
+                        </div>
+                    </div>
                     <h4>Ms. Nasasira Scovia</h4>
                     <p>Member</p>
                 </div>
                 <div class="member-card">
-                    <div class="member-avatar"><i class="fas fa-user"></i></div>
+                    <div class="member-avatar">
+                        <img alt="Ms. Nanyunja Catherine" src="nanyunja-catherine.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+                        <div class="image-placeholder" style="display: none;">
+                            <i class="fas fa-user"></i>
+                        </div>
+                    </div>
                     <h4>Ms. Nanyunja Catherine</h4>
                     <p>Member</p>
                 </div>
@@ -1357,27 +1464,35 @@
         <div class="container">
             <h2 class="section-title">Our Gallery</h2>
             <div class="gallery-grid">
-                <div class="gallery-item">
-                    <i class="fas fa-image fa-3x"></i>
+                <div class="gallery-item" onclick="openLightbox('gallery-1.jpg', 'Community Outreach Program')">
+                    <img alt="Community Outreach Program" src="gallery-1.jpg" onerror="this.style.display='none'; this.parentElement.classList.add('image-placeholder'); this.parentElement.innerHTML='<i class=\'fas fa-image fa-3x\'></i><span>Gallery Image 1</span>'"/>
                 </div>
-                <div class="gallery-item">
-                    <i class="fas fa-image fa-3x"></i>
+                <div class="gallery-item" onclick="openLightbox('gallery-2.jpg', 'Healthcare Support Initiative')">
+                    <img alt="Healthcare Support Initiative" src="gallery-2.jpg" onerror="this.style.display='none'; this.parentElement.classList.add('image-placeholder'); this.parentElement.innerHTML='<i class=\'fas fa-image fa-3x\'></i><span>Gallery Image 2</span>'"/>
                 </div>
-                <div class="gallery-item">
-                    <i class="fas fa-image fa-3x"></i>
+                <div class="gallery-item" onclick="openLightbox('gallery-3.jpg', 'Water & Sanitation Project')">
+                    <img alt="Water & Sanitation Project" src="gallery-3.jpg" onerror="this.style.display='none'; this.parentElement.classList.add('image-placeholder'); this.parentElement.innerHTML='<i class=\'fas fa-image fa-3x\'></i><span>Gallery Image 3</span>'"/>
                 </div>
-                <div class="gallery-item">
-                    <i class="fas fa-image fa-3x"></i>
+                <div class="gallery-item" onclick="openLightbox('gallery-4.jpg', 'Economic Empowerment Workshop')">
+                    <img alt="Economic Empowerment Workshop" src="gallery-4.jpg" onerror="this.style.display='none'; this.parentElement.classList.add('image-placeholder'); this.parentElement.innerHTML='<i class=\'fas fa-image fa-3x\'></i><span>Gallery Image 4</span>'"/>
                 </div>
-                <div class="gallery-item">
-                    <i class="fas fa-image fa-3x"></i>
+                <div class="gallery-item" onclick="openLightbox('gallery-5.jpg', 'Community Meeting')">
+                    <img alt="Community Meeting" src="gallery-5.jpg" onerror="this.style.display='none'; this.parentElement.classList.add('image-placeholder'); this.parentElement.innerHTML='<i class=\'fas fa-image fa-3x\'></i><span>Gallery Image 5</span>'"/>
                 </div>
-                <div class="gallery-item">
-                    <i class="fas fa-image fa-3x"></i>
+                <div class="gallery-item" onclick="openLightbox('gallery-6.jpg', 'Elderly Care Program')">
+                    <img alt="Elderly Care Program" src="gallery-6.jpg" onerror="this.style.display='none'; this.parentElement.classList.add('image-placeholder'); this.parentElement.innerHTML='<i class=\'fas fa-image fa-3x\'></i><span>Gallery Image 6</span>'"/>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <div class="lightbox-content" onclick="event.stopPropagation()">
+            <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+            <img id="lightboxImage" src="" alt="">
+        </div>
+    </div>
 
     <!-- Contact Section -->
     <section class="section contact" id="contact">
@@ -1485,7 +1600,7 @@
         </div>
     </footer>
 
-    <!-- Donate Button -->
+     <!-- Donate Button -->
     <button class="donate-btn" onclick="showDonationOptions()" aria-label="Donate now">
         <i class="fas fa-donate"></i> Donate Now
     </button>
