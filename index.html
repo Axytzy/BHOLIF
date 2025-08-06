@@ -2,14 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <!-- Enhanced viewport meta tag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     <title>BHOLIF - Buddu Hopeful Living Foundation Uganda</title>
+    <!-- Preconnect to CDN for faster font loading -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent; /* Remove tap highlight on mobile */
         }
 
         body {
@@ -18,6 +22,7 @@
             color: #333;
             overflow-x: hidden;
             background-color: #ffffff;
+            -webkit-text-size-adjust: 100%; /* Prevent font scaling in landscape */
         }
 
         /* Header Styles */
@@ -50,8 +55,10 @@
             gap: 0.5rem;
         }
 
-        .logo i {
-            font-size: 1.5rem;
+        .logo img {
+            height: 50px;
+            width: auto;
+            max-width: 100%; /* Ensure logo doesn't overflow */
         }
 
         .nav-menu {
@@ -67,6 +74,7 @@
             padding: 0.5rem 1rem;
             border-radius: 5px;
             font-weight: 500;
+            font-size: 1rem; /* Consistent font size */
         }
 
         .nav-menu a:hover {
@@ -79,8 +87,9 @@
             background: none;
             border: none;
             color: #333;
-            font-size: 1.5rem;
+            font-size: 1.8rem; /* Larger tap target */
             cursor: pointer;
+            padding: 0.5rem; /* Added padding for better touch */
         }
 
         /* Hero Section */
@@ -90,6 +99,7 @@
             background-size: cover;
             background-position: center;
             height: 100vh;
+            min-height: 500px; /* Prevent too short on mobile */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -105,6 +115,7 @@
             background: rgba(255, 255, 255, 0.95);
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin: 0 1rem; /* Added margin for mobile */
         }
 
         .hero h1 {
@@ -112,6 +123,7 @@
             margin-bottom: 1rem;
             color: #333;
             text-shadow: none;
+            line-height: 1.2; /* Better line spacing */
         }
 
         .hero .subtitle {
@@ -147,6 +159,8 @@
             display: inline-block;
             transition: all 0.3s ease;
             font-weight: bold;
+            min-width: 160px; /* Consistent button width */
+            text-align: center;
         }
 
         .btn-primary {
@@ -160,16 +174,16 @@
             border: 2px solid #e60000;
         }
 
-        .btn:hover {
+        .btn:hover, .btn:focus {
             transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
 
-        .btn-primary:hover {
+        .btn-primary:hover, .btn-primary:focus {
             background: #cc0000;
         }
 
-        .btn-secondary:hover {
+        .btn-secondary:hover, .btn-secondary:focus {
             background: #e60000;
             color: white;
         }
@@ -191,6 +205,7 @@
             color: #333;
             margin-bottom: 3rem;
             position: relative;
+            padding: 0 1rem; /* Added padding for mobile */
         }
 
         .section-title::after {
@@ -257,7 +272,7 @@
 
         .about-image img {
             width: 100%;
-            height: 100%;
+            height: auto; /* Changed to auto for better aspect ratio */
             object-fit: cover;
             display: block;
         }
@@ -272,6 +287,7 @@
             color: #6c757d;
             font-size: 1.2rem;
             border-radius: 15px;
+            flex-direction: column;
         }
 
         /* Mission Vision Section */
@@ -568,9 +584,10 @@
         }
 
         .form-group input,
-        .form-group textarea {
+        .form-group textarea,
+        .form-group select {
             width: 100%;
-            padding: 0.9rem;
+            padding: 1rem; /* Increased padding for mobile */
             border: 2px solid #e9ecef;
             border-radius: 8px;
             background: white;
@@ -578,10 +595,12 @@
             font-family: inherit;
             font-size: 1rem;
             transition: border-color 0.3s ease;
+            -webkit-appearance: none; /* Remove iOS styling */
         }
 
         .form-group input:focus,
-        .form-group textarea:focus {
+        .form-group textarea:focus,
+        .form-group select:focus {
             outline: none;
             border-color: #e60000;
         }
@@ -594,13 +613,17 @@
         .submit-btn {
             background: #e60000;
             color: white;
-            padding: 12px 30px;
+            padding: 1rem 2rem; /* Larger padding for mobile */
             border: none;
             border-radius: 50px;
             font-size: 1.1rem;
             cursor: pointer;
             font-weight: bold;
             transition: all 0.3s ease;
+            width: 100%; /* Full width on mobile */
+            max-width: 300px; /* But not too wide on desktop */
+            display: block;
+            margin: 0 auto;
         }
 
         .submit-btn:hover {
@@ -646,6 +669,7 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            font-size: 0.95rem; /* Slightly smaller font */
         }
 
         .footer-links a:hover {
@@ -656,12 +680,14 @@
             color: #bdc3c7;
             margin-bottom: 1rem;
             line-height: 1.7;
+            font-size: 0.95rem; /* Slightly smaller font */
         }
 
         .social-links {
             display: flex;
             gap: 1rem;
             margin-top: 1.5rem;
+            flex-wrap: wrap; /* Wrap on small screens */
         }
 
         .social-links a {
@@ -709,6 +735,7 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            min-width: 160px; /* Consistent width */
         }
 
         .donate-btn:hover {
@@ -728,6 +755,8 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
             z-index: 1000;
             color: #333;
+            max-width: 300px; /* Prevent too wide on mobile */
+            width: calc(100% - 60px); /* Responsive width */
         }
 
         .donation-options h4 {
@@ -736,7 +765,7 @@
         }
 
         .donation-method {
-            padding: 10px 15px;
+            padding: 12px 15px; /* Larger tap target */
             margin-bottom: 10px;
             background: #f8f9fa;
             border-radius: 5px;
@@ -759,10 +788,12 @@
             background: #e60000;
             color: white;
             border: none;
-            padding: 8px 16px;
+            padding: 10px 16px; /* Larger tap target */
             border-radius: 5px;
             cursor: pointer;
             margin-top: 10px;
+            font-size: 1rem;
+            width: 100%; /* Full width on mobile */
         }
 
         .close-btn:hover {
@@ -860,6 +891,10 @@
             .hero h1 {
                 font-size: 3rem;
             }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
         }
 
         @media (max-width: 768px) {
@@ -895,6 +930,7 @@
             .about-content,
             .contact-content {
                 grid-template-columns: 1fr;
+                gap: 2rem;
             }
 
             .cta-buttons {
@@ -917,11 +953,41 @@
             .contact-form {
                 padding: 1.5rem;
             }
+            
+            /* Larger tap targets for mobile */
+            .nav-menu a {
+                padding: 1rem;
+                font-size: 1.1rem;
+            }
+            
+            /* Adjust section padding for mobile */
+            .section {
+                padding: 3.5rem 0;
+            }
+            
+            /* Center align text on mobile */
+            .about-text, .contact-info {
+                text-align: center;
+            }
+            
+            /* Center align contact items on mobile */
+            .contact-item {
+                justify-content: center;
+            }
         }
 
         @media (max-width: 480px) {
             .hero h1 {
                 font-size: 2rem;
+                padding: 0 1rem;
+            }
+            
+            .hero .subtitle {
+                font-size: 1rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
             }
             
             .section-title {
@@ -929,7 +995,34 @@
             }
             
             .section {
-                padding: 3.5rem 0;
+                padding: 3rem 0;
+            }
+            
+            .btn {
+                padding: 1rem 1.5rem;
+                font-size: 1rem;
+                width: 100%;
+                max-width: 250px;
+            }
+            
+            /* Adjust grid items for very small screens */
+            .objectives-grid,
+            .services-grid,
+            .leadership-grid,
+            .members-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            /* Make form inputs full width */
+            .form-group input,
+            .form-group textarea,
+            .form-group select {
+                width: 100%;
+            }
+            
+            /* Center logo text on very small screens */
+            .logo {
+                font-size: 1.5rem;
             }
         }
     </style>
@@ -938,7 +1031,7 @@
     <!-- Header -->
     <header class="header">
         <div class="nav-container">
-            <div class="logo"><img alt="BHOLIF Logo" src="logo.jpg" style="height:50px; width:auto;"/> BHOLIF</div>
+            <div class="logo"><img alt="BHOLIF Logo" src="logo.jpg"/> BHOLIF</div>
             <nav>
                 <ul class="nav-menu" id="navMenu">
                     <li><a href="#home">Home</a></li>
@@ -950,7 +1043,7 @@
                     <li><a href="#gallery">Gallery</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
-                <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu">☰</button>
             </nav>
         </div>
     </header>
@@ -1301,7 +1394,7 @@
                 </div>
                 <div class="contact-form">
                     <h3>Send us a Message</h3>
-                    <form>
+                    <form id="contactForm">
                         <div class="form-group">
                             <label for="name">Your Name</label>
                             <input type="text" id="name" name="name" required>
@@ -1335,10 +1428,10 @@
                     <p><strong>Registration Number:</strong> 80034075092178</p>
                 </div>
                 <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
             <div class="footer-column">
@@ -1376,12 +1469,12 @@
     </footer>
 
     <!-- Donate Button -->
-    <button class="donate-btn" onclick="showDonationOptions()">
+    <button class="donate-btn" onclick="showDonationOptions()" aria-label="Donate now">
         <i class="fas fa-donate"></i> Donate Now
     </button>
 
     <!-- Donation Options Popup -->
-    <div class="donation-options">
+    <div class="donation-options" id="donationOptions">
         <h4>Donate via:</h4>
         <div class="donation-method" onclick="copyPhoneNumber('+256779873791')">
             <i class="fas fa-mobile-alt"></i> Mobile Money (+256779873791)
@@ -1391,17 +1484,32 @@
 
     <!-- JavaScript -->
     <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+        
         function toggleMenu() {
-            const navMenu = document.getElementById('navMenu');
             navMenu.classList.toggle('active');
+            mobileMenuBtn.setAttribute('aria-expanded', navMenu.classList.contains('active'));
         }
+        
+        mobileMenuBtn.addEventListener('click', toggleMenu);
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!navMenu.contains(event.target) && event.target !== mobileMenuBtn) {
+                navMenu.classList.remove('active');
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            }
+        });
 
+        // Donation functions
         function showDonationOptions() {
-            document.querySelector('.donation-options').style.display = 'block';
+            document.getElementById('donationOptions').style.display = 'block';
         }
 
         function closeDonationOptions() {
-            document.querySelector('.donation-options').style.display = 'none';
+            document.getElementById('donationOptions').style.display = 'none';
         }
 
         function copyPhoneNumber(number) {
@@ -1436,17 +1544,29 @@
         // Close mobile menu when clicking on a link
         document.querySelectorAll('.nav-menu a').forEach(link => {
             link.addEventListener('click', function() {
-                document.getElementById('navMenu').classList.remove('active');
+                navMenu.classList.remove('active');
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
             });
         });
 
         // Contact form submission
-        document.querySelector('.contact-form form').addEventListener('submit', function(e) {
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             alert('Thank you for your message! We will get back to you soon.');
             this.reset();
         });
+        
+        // Close donation options when clicking outside
+        document.addEventListener('click', function(event) {
+            const donationOptions = document.getElementById('donationOptions');
+            const donateBtn = document.querySelector('.donate-btn');
+            
+            if (!donationOptions.contains(event.target) {
+                if (event.target !== donateBtn && !donateBtn.contains(event.target)) {
+                    donationOptions.style.display = 'none';
+                }
+            }
+        });
     </script>
 </body>
 </html>
-                
