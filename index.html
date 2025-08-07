@@ -94,9 +94,10 @@
         /* Hero Section */
         .hero {
             background: linear-gradient(rgba(255, 255, 255, 0.95), rgba(248, 249, 250, 0.95)), 
-                        url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
-            background-size: cover;
+                        url('logo.png');
+            background-size: contain;
             background-position: center;
+            background-repeat: no-repeat;
             height: 100vh;
             min-height: 500px;
             display: flex;
@@ -263,18 +264,27 @@
         }
 
         .about-image {
-            position: relative;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-            height: 350px;
-        }
-
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    height: 420px; /* increased from 350px */
+    align-self: start;
+    margin-top: 3.5rem;
+}
         .about-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top; /* zooms into upper part */
+    transform: scale(1.1); /* makes image appear more zoomed in */
+}
+@media (max-width: 768px) {
+    .about-image {
+        height: 300px;
+        margin-top: 2rem;
+    }
+}
 
         /* Image placeholder styles */
         .image-placeholder {
@@ -1071,7 +1081,7 @@
     <header class="header">
         <div class="nav-container">
             <div class="logo">
-                <img alt="BHOLIF Logo" src="logo.jpg"/> BHOLIF
+                <img alt="BHOLIF Logo" src="logo.png"/> BHOLIF
             </div>
             <nav>
                 <ul class="nav-menu" id="navMenu">
@@ -1107,7 +1117,7 @@
         <div class="container">
             <div class="stats-grid">
                 <div class="stat-item">
-                    <h3>15</h3>
+                    <h3>2</h3>
                     <p>Founding Members</p>
                 </div>
                 <div class="stat-item">
@@ -1133,14 +1143,15 @@
             <div class="about-content">
                 <div class="about-text">
                     <h3>Our Story</h3>
-                    <p>Buddu Hopeful Living Foundation Uganda Ltd (BHOLIF) is a nonprofit organization established on August 1st, 2023, and fully registered as a Company Limited by Guarantee on July 10th, 2025.</p>
-                    <p>Founded by Rev. Father Ronald Mujabi of Masaka Diocese and Mr. Kirabira Tadeo (Proprietor of St. Francis Nursery and Junior Schools), BHOLIF represents the Luganda word "BUDDUKIRO" - meaning a place of hospitality, accommodation for the needy, and refuge.</p>
-                    <p>We are dedicated to improving the welfare, social wellbeing, and healthy living of elderly and vulnerable people throughout Uganda, with a focus on economic empowerment, healthcare access, and community support.</p>
+                    <p>Buddu Hopeful Living Foundation Uganda Ltd (BHOLIF) is a non-profit organization established on 1st August, 2023 when Rev. Father Ronald Mujabi visited one of the homes in Kyanukuzi Parish to admnister the sacrament of extreme unction and that is where the idea of helping the eldery began from. It is now fully registered as a Company Limited by Guarantee on 10th July, 2025.</p>
+                    <p>BHOLIF was founded by Rev. Father Ronald Mujabi of Masaka Diocese currently working at Kaliiro Parish and Mr. Kirabira Tadeo (Proprietor of St. Francis Nursery and Junior Schools), BHOLIF represents the Luganda word "BUDDUKIRO" - meaning a place of hospitality, accommodation for the needy, and refuge.</p>
+                    <p>We are dedicated to improving the welfare, social wellbeing, and healthy living of the elderly and vulnerable people throughout Uganda, with a focus on economic empowerment, healthcare access, and community support.</p>
                     <div class="registration-info">
                         <h4><i class="fas fa-file-contract"></i> Legal Registration</h4>
                         <p><strong>Registration Number:</strong> 80034075092178</p>
                         <p><strong>Company Type:</strong> Limited by Guarantee</p>
-                        <p><strong>Registered Office:</strong> Uganda</p>
+                        <p><strong>Registered Office:</strong> Lwengo District Uganda</p>
+                        <p><strong>Box Number:</strong> 221332 Masaka</p>
                     </div>
                 </div>
                 <div class="about-image">
@@ -1223,7 +1234,7 @@
                 <div class="service-card">
                     <div class="service-icon"><i class="fas fa-hospital"></i></div>
                     <h3>Healthcare Access</h3>
-                    <p>Helping elderly and vulnerable individuals access essential healthcare services and medical support.</p>
+                    <p>Helping the elderly and vulnerable individuals access essential healthcare services and medical support.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon"><i class="fas fa-home"></i></div>
@@ -1293,9 +1304,19 @@
                         </div>
                     </div>
                     <h4>Mr. Kirabira Tadeo</h4>
-                    <div class="role">Co-Founder & Chairperson</div>
+                    <div class="role">Co-Founder</div>
                     <p>Proprietor of St. Francis Schools and Jude Auto Care Garage, providing strategic leadership.</p>
-                </div>
+                  </div>
+                <div class="leader-card">
+                    <div class="leader-avatar">
+                        <img alt="Rev. Father John Fischer Kiyimba" src="Kiyimba.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+                        <div class="image-placeholder" style="display: none;">
+                            <i class="fas fa-user"></i>
+                        </div>
+                    </div>
+                    <h4>Rev. Father John Fischer Kiyimba</h4>
+                    <div class="role">Patron & President</div>
+                    <p>Priest of Masaka Diocese</p>
             </div>
         </div>
     </section>
@@ -1313,7 +1334,7 @@
                         </div>
                     </div>
                     <h4>Rev. Fr. Ronald Mujabi</h4>
-                    <p>Co-Founder</p>
+                    <p>Founder</p>
                 </div>
                 <div class="member-card">
                     <div class="member-avatar">
@@ -1323,27 +1344,38 @@
                         </div>
                     </div>
                     <h4>Mr. Kirabira Tadeo</h4>
-                    <p>Co-Founder & Chairperson</p>
+                    <p>Co-Founder</p>
                 </div>
                 <div class="member-card">
                     <div class="member-avatar">
-                        <img alt="Ms. Nakyimba Flora" src="nakyimba-flora.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+                        <img alt="Rev. Father John Fischer Kiyimba" src="Kiyimba.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
                         <div class="image-placeholder" style="display: none;">
                             <i class="fas fa-user"></i>
                         </div>
                     </div>
-                    <h4>Ms. Nakyimba Flora</h4>
-                    <p>Member</p>
+                    <h4>Rev. Father John Fischer Kiyimba</h4>
+                    <p>Patron & President</p>
                 </div>
                 <div class="member-card">
                     <div class="member-avatar">
-                        <img alt="Ms. Nakamoga Jackline" src="nakamoga-jackline.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+                        <img alt="Ms. Nakyiyimba Flora" src="nakyiyimba-flora.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
                         <div class="image-placeholder" style="display: none;">
                             <i class="fas fa-user"></i>
                         </div>
                     </div>
-                    <h4>Ms. Nakamoga Jackline</h4>
-                    <p>Member</p>
+                    <h4>Ms. Nakyiyimba Flora</h4>
+                    <p>Treasurer</p>
+                </div>
+                
+                <div class="member-card">
+                    <div class="member-avatar">
+                        <img alt="Ms. Nasasira Scovia" src="nasasira-scovia.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+                        <div class="image-placeholder" style="display: none;">
+                            <i class="fas fa-user"></i>
+                        </div>
+                    </div>
+                    <h4>Ms. Nasasira Scovia</h4>
+                    <p>Secretary</p>
                 </div>
                 <div class="member-card">
                     <div class="member-avatar">
@@ -1353,56 +1385,56 @@
                         </div>
                     </div>
                     <h4>Ms. Nakazibwe Oliver Grace</h4>
-                    <p>Member</p>
+                    <p>Welfare</p>
                 </div>
                 <div class="member-card">
                     <div class="member-avatar">
-                        <img alt="Ms. Nakatooke Rosette" src="nakatooke-rosette.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+                        <img alt="Mr. Ssebanja Mike" src="ssebanja-mike.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
                         <div class="image-placeholder" style="display: none;">
                             <i class="fas fa-user"></i>
                         </div>
                     </div>
-                    <h4>Ms. Nakatooke Rosette</h4>
-                    <p>Member</p>
+                    <h4>Mr. Ssebanja Mike</h4>
+                    <p>Admnistrator</p>
                 </div>
                 <div class="member-card">
                     <div class="member-avatar">
-                        <img alt="Ms. Nabachwa Justine" src="nabachwa-justine.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+                        <img alt="Mr.Kyambadde Nelly" src="Nelly.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+                        <div class="image-placeholder" style="display: none;">
+                            <i class="fas fa-user"></i>
+                        </div>
+                    </div>
+                    <h4>Mr. Kyambadde Nelly</h4>
+                    <p>Social Media Handler</p>
+                </div>
+                <div class="member-card">
+                    <div class="member-avatar">
+                        <img alt="Ms.Nabachwa Justine" src="nabachwa-justine.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
                         <div class="image-placeholder" style="display: none;">
                             <i class="fas fa-user"></i>
                         </div>
                     </div>
                     <h4>Ms. Nabachwa Justine</h4>
-                    <p>Member</p>
+                    <p>Assistant Treasurer</p>
                 </div>
                 <div class="member-card">
                     <div class="member-avatar">
-                        <img alt="Ms. Nakiyumbi Resty" src="nakiyumbi-resty.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+                        <img alt="Ms. Nakivumbi Resty" src="nakivumbi-resty.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
                         <div class="image-placeholder" style="display: none;">
                             <i class="fas fa-user"></i>
                         </div>
                     </div>
-                    <h4>Ms. Nakiyumbi Resty</h4>
+                    <h4>Ms. Nakivumbi Resty</h4>
                     <p>Member</p>
                 </div>
                 <div class="member-card">
                     <div class="member-avatar">
-                        <img alt="Mr. Lule David" src="lule-david.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+                        <img alt="Ms. Nakamya Barbra" src="nakamya-barbra.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
                         <div class="image-placeholder" style="display: none;">
                             <i class="fas fa-user"></i>
                         </div>
                     </div>
-                    <h4>Mr. Lule David</h4>
-                    <p>Member</p>
-                </div>
-                <div class="member-card">
-                    <div class="member-avatar">
-                        <img alt="Ms. Nakamya Barbra Kyolango" src="nakamya-barbra-kyolango.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
-                        <div class="image-placeholder" style="display: none;">
-                            <i class="fas fa-user"></i>
-                        </div>
-                    </div>
-                    <h4>Ms. Nakamya Barbra Kyolango</h4>
+                    <h4>Ms. Nakamya Barbra</h4>
                     <p>Member</p>
                 </div>
                 <div class="member-card">
@@ -1427,24 +1459,14 @@
                 </div>
                 <div class="member-card">
                     <div class="member-avatar">
-                        <img alt="Mr. Ssebanja Mike" src="ssebanja-mike.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+                        <img alt="Ms. Nakamoga Jackline" src="nakamoga-jackline.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
                         <div class="image-placeholder" style="display: none;">
                             <i class="fas fa-user"></i>
                         </div>
                     </div>
-                    <h4>Mr. Ssebanja Mike</h4>
+                    <h4>Ms. Nakamoga Jackline</h4>
                     <p>Member</p>
-                </div>
-                <div class="member-card">
-                    <div class="member-avatar">
-                        <img alt="Ms. Nasasira Scovia" src="nasasira-scovia.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
-                        <div class="image-placeholder" style="display: none;">
-                            <i class="fas fa-user"></i>
-                        </div>
-                    </div>
-                    <h4>Ms. Nasasira Scovia</h4>
-                    <p>Member</p>
-                </div>
+                 </div>
                 <div class="member-card">
                     <div class="member-avatar">
                         <img alt="Ms. Nanyunja Catherine" src="nanyunja-catherine.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
@@ -1482,7 +1504,12 @@
                 <div class="gallery-item" onclick="openLightbox('gallery-6.jpg', 'Elderly Care Program')">
                     <img alt="Elderly Care Program" src="gallery-6.jpg" onerror="this.style.display='none'; this.parentElement.classList.add('image-placeholder'); this.parentElement.innerHTML='<i class=\'fas fa-image fa-3x\'></i><span>Gallery Image 6</span>'"/>
                 </div>
-            </div>
+                <div class="gallery-item" onclick="openLightbox('gallery-6.jpg', 'Elderly Care Program')">
+                    <img alt="Elderly Care Program" src="gallery-7.jpg" onerror="this.style.display='none'; this.parentElement.classList.add('image-placeholder'); this.parentElement.innerHTML='<i class=\'fas fa-image fa-3x\'></i><span>Gallery Image 7</span>'"/>
+                </div>
+                <div class="gallery-item" onclick="openLightbox('gallery-6.jpg', 'Elderly Care Program')">
+                    <img alt="Elderly Care Program" src="gallery-8.jpg" onerror="this.style.display='none'; this.parentElement.classList.add('image-placeholder'); this.parentElement.innerHTML='<i class=\'fas fa-image fa-3x\'></i><span>Gallery Image 8</span>'"/>
+                </div>
         </div>
     </section>
 
